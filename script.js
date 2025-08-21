@@ -61,9 +61,14 @@ let humanScore = 0;
 let computerScore = 0;
 
 function playGame() {
-    humanChoice = getPlayerChoice();
-    computerChoice = getComputerChoice();
-    playRound(humanChoice, computerChoice);
+    let round = 0;
+    while (round <= 5) {
+        humanChoice = getPlayerChoice();
+        computerChoice = getComputerChoice();
+        playRound(humanChoice, computerChoice);
+        round += 1;
+    }
+    console.log(`Game Over!\nFinal scores are:\nPlayer:${humanScore} Computer:${computerScore}`);
 }
 
 playGame();
